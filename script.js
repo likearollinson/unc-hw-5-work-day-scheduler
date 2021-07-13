@@ -1,53 +1,43 @@
-var currentDayEl = $("#currentDay");
-var today = moment();
+$("#currentDay").text(moment().format("MMMM Do, YYYY"));
 
-currentDayEl.text(today.format("MMMM Do, YYYY"));
-
-//Change textarea background color based on time
+//Change timeblock text area background color based on time
 var checkTime = function () {
+    //get Current time
+    var currentTime = moment().format('HH');
+    //below is code to manipulate currentTime for testing purposes
+    // var currentTime = 13
 
-    //Get Current time
-    // var currentTime = moment().format('HH');
-    var currentTime = 08
-
-    //get all elements with class "taskarea"
+    //get all elements with class "text"
     var timeBlockEl = $(".text");
-
-    //loop through taskarea classes
     for (var i = 0 ; i < timeBlockEl.length ; i++) {
-
-        //Get element i's ID as a string
-        var elementID = timeBlockEl[i].id;
-
+        //iterate through each time block element
+        var timeBlock = i + 8;
         //get element by ID
-        var changeID = document.getElementById(timeBlockEl[i].id)
-
+        var findEl = document.getElementById(timeBlockEl[i].id)
         //remove any old classes from element
         $(timeBlockEl[i].id).removeClass(".present .past .future");
-
-        // apply new class if task is present/past/future
-        if (elementID < currentTime) {
-            $(changeID).addClass("past");
-        } else if (elementID > currentTime) {
-            $(changeID).addClass("future");
+        //apply new class if task is present/past/future
+        if (timeBlock < currentTime) {
+            $(findEl).addClass("past");
+        } else if (timeBlock > currentTime) {
+            $(findEl).addClass("future");
         } else {
-            $(changeID).addClass("present");
+            $(findEl).addClass("present");
         }
     }
 }
-
-// checkTime every 5 minutes
+//checkTime every 5 minutes
 setInterval(checkTime(), (1000 * 60) * 5);
 
-eightEl = $("#time08");
-nineEl = $("#time09");
-tenEl = $("#time10");
-elevenEl = $("#time11");
-twelveEl = $("#time12");
-oneEl = $("#time01");
-twoEl = $("#time02");
-threeEl = $("#time03");
-fourEl = $("#time04");
+var eightEl = $("#timeEight");
+var nineEl = $("#timeNine");
+var tenEl = $("#timeTen");
+var elevenEl = $("#timeEleven");
+var twelveEl = $("#timeTwelve");
+var oneEl = $("#timeOne");
+var twoEl = $("#timeTwo");
+var threeEl = $("#timeThree");
+var fourEl = $("#timeFour");
 
 function renderText() {
     var eightText = localStorage.getItem("eightText");
