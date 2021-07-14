@@ -28,18 +28,6 @@ var checkTime = function () {
 }
 //check currentTime every 5 minutes
 setInterval(checkTime(), (1000 * 60) * 5);
-
-var eightEl = $("#textEight");
-var nineEl = $("#textNine");
-var tenEl = $("#textTen");
-var elevenEl = $("#textEleven");
-var twelveEl = $("#textTwelve");
-var oneEl = $("#textOne");
-var twoEl = $("#textTwo");
-var threeEl = $("#textThree");
-var fourEl = $("#textFour");
-
-
 function renderText() {
     var eightText = localStorage.getItem("eightText");
     var nineText = localStorage.getItem("nineText");
@@ -51,15 +39,15 @@ function renderText() {
     var threeText = localStorage.getItem("threeText");
     var fourText = localStorage.getItem("fourText");
 
-    eightEl.text(eightText);
-    nineEl.text(nineText);
-    tenEl.text(tenText);
-    elevenEl.text(elevenText);
-    twelveEl.text(twelveText);
-    oneEl.text(oneText);
-    twoEl.text(twoText);
-    threeEl.text(threeText);
-    fourEl.text(fourText);
+    $("#blockEight").text(eightText);
+    $("#blockNine").text(nineText);
+    $("#blockTen").text(tenText);
+    $("#blockEleven").text(elevenText);
+    $("#blockTwelve").text(twelveText);
+    $("#blockOne").text(oneText);
+    $("#blockTwo").text(twoText);
+    $("#blockThree").text(threeText);
+    $("#blockFour").text(fourText);
 };
 
 saveButton = $(".saveBtn");
@@ -67,15 +55,15 @@ saveButton = $(".saveBtn");
 saveButton.click (function(event) {
     event.preventDefault();
 
-    var eightText = eightEl.val().trim();
-    var nineText = nineEl.val().trim();
-    var tenText = tenEl.val().trim();
-    var elevenText = elevenEl.val().trim();
-    var twelveText = twelveEl.val().trim();
-    var oneText = oneEl.val().trim();
-    var twoText = twoEl.val().trim();
-    var threeText = threeEl.val().trim();
-    var fourText = fourEl.val().trim();
+    var eightText = $("#blockEight").val().trim();
+    var nineText = $("#blockNine").val().trim();
+    var tenText = $("#blockTen").val().trim();
+    var elevenText = $("#blockEleven").val().trim();
+    var twelveText = $("#blockTwelve").val().trim();
+    var oneText = $("#blockOne").val().trim();
+    var twoText = $("#blockTwo").val().trim();
+    var threeText = $("#blockThree").val().trim();
+    var fourText = $("#blockFour").val().trim();
 
     console.log(eightText);
 
