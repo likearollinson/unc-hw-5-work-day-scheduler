@@ -12,13 +12,13 @@ var checkTime = function () {
     var timeblockEl = $(".timeblockText");
     //iterate through each timeblock element
     for (var i = 0 ; i < timeblockEl.length ; i++) {
-        //create variable time block that represents each timeblock based on iteration
+        //create variable timeblock that represents each timeblock based on iteration
         var timeblock = i + 8;
         //get element by ID
         var findEl = document.getElementById(timeblockEl[i].id)
         //remove any old classes from element
         $(timeblockEl[i].id).removeClass(".present .past .future");
-        //apply new class if task is present/past/future
+        //apply new class if timeblock is present/past/future
         if (timeblock < currentTime) {
             $(findEl).addClass("past");
         } else if (timeblock > currentTime) {
@@ -68,8 +68,6 @@ $(".saveBtn").click (function(event) {
     localStorage.setItem("twoText", $("#blockTwo").val().trim());
     localStorage.setItem("threeText", $("#blockThree").val().trim());
     localStorage.setItem("fourText", $("#blockFour").val().trim());
-    //calls rendertext function 
-    renderText();
 });
 
 renderText();
