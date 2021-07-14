@@ -8,18 +8,18 @@ var checkTime = function () {
     // var currentTime = 13
 
     //get all elements with class "text"
-    var timeBlockEl = $(".timeblockText");
-    for (var i = 0 ; i < timeBlockEl.length ; i++) {
+    var timeblockEl = $(".timeblockText");
+    for (var i = 0 ; i < timeblockEl.length ; i++) {
         //iterate through each time block element
-        var timeBlock = i + 8;
+        var timeblock = i + 8;
         //get element by ID
-        var findEl = document.getElementById(timeBlockEl[i].id)
+        var findEl = document.getElementById(timeblockEl[i].id)
         //remove any old classes from element
-        $(timeBlockEl[i].id).removeClass(".present .past .future");
+        $(timeblockEl[i].id).removeClass(".present .past .future");
         //apply new class if task is present/past/future
-        if (timeBlock < currentTime) {
+        if (timeblock < currentTime) {
             $(findEl).addClass("past");
-        } else if (timeBlock > currentTime) {
+        } else if (timeblock > currentTime) {
             $(findEl).addClass("future");
         } else {
             $(findEl).addClass("present");
@@ -29,7 +29,7 @@ var checkTime = function () {
 //check currentTime every 5 minutes
 setInterval(checkTime(), (1000 * 60) * 5);
 
-var eightEl = $("#textEight").val();
+var eightEl = $("#textEight");
 var nineEl = $("#textNine");
 var tenEl = $("#textTen");
 var elevenEl = $("#textEleven");
@@ -39,45 +39,48 @@ var twoEl = $("#textTwo");
 var threeEl = $("#textThree");
 var fourEl = $("#textFour");
 
-function renderText() {
-    var eightText = localStorage.getItem("eightText");
-    var nineText = localStorage.getItem("nineText");
-    var tenText = localStorage.getItem("tenText");
-    var elevenText = localStorage.getItem("elevenText");
-    var twelveText = localStorage.getItem("twelveText");
-    var oneText = localStorage.getItem("oneText");
-    var twoText = localStorage.getItem("twoText");
-    var threeText = localStorage.getItem("threeText");
-    var fourText = localStorage.getItem("fourText");
 
-    if (!eightText || !nineText || !tenText || !elevenText || !twelveText || !oneText || !twoText || !threeText || !fourText)
+function renderText() {
+    var eightText1 = localStorage.getItem("eightText");
+    var nineText1 = localStorage.getItem("nineText");
+    var tenText1 = localStorage.getItem("tenText");
+    var elevenText1 = localStorage.getItem("elevenText");
+    var twelveText1 = localStorage.getItem("twelveText");
+    var oneText1 = localStorage.getItem("oneText");
+    var twoText1 = localStorage.getItem("twoText");
+    var threeText1 = localStorage.getItem("threeText");
+    var fourText1 = localStorage.getItem("fourText");
+
+    if (!eightText1 || !nineText1 || !tenText1 || !elevenText1 || !twelveText1 || !oneText1 || !twoText1 || !threeText1 || !fourText1)
         return;
     
-    eightEl.text(eightText);
-    nineEl.text(nineText);
-    tenEl.text(tenText);
-    elevenEl.text(elevenText);
-    twelveEl.text(twelveText);
-    oneEl.text(oneText);
-    twoEl.text(twoText);
-    threeEl.text(threeText);
-    fourEl.text(fourText);
+    eightEl.text(eightText1);
+    nineEl.text(nineText1);
+    tenEl.text(tenText1);
+    elevenEl.text(elevenText1);
+    twelveEl.text(twelveText1);
+    oneEl.text(oneText1);
+    twoEl.text(twoText1);
+    threeEl.text(threeText1);
+    fourEl.text(fourText1);
 };
 
-var saveButton = $(".saveBtn")
+saveButton = $(".saveBtn");
 
 saveButton.click (function(event) {
     event.preventDefault();
 
-    var eightText = eightEl.value;
-    var nineText = nineEl.value;
-    var tenText = tenEl.value;
-    var elevenText = elevenEl.value;
-    var twelveText = twelveEl.value;
-    var oneText = oneEl.value;
-    var twoText = twoEl.value;
-    var threeText = threeEl.value;
-    var fourText = fourEl.value;
+    var eightText = eightEl.val().trim();
+    var nineText = nineEl.val().trim();
+    var tenText = tenEl.val().trim();
+    var elevenText = elevenEl.val().trim();
+    var twelveText = twelveEl.val().trim();
+    var oneText = oneEl.val().trim();
+    var twoText = twoEl.val().trim();
+    var threeText = threeEl.val().trim();
+    var fourText = fourEl.val().trim();
+
+    console.log(eightText);
 
     localStorage.setItem("eightText", eightText);
     localStorage.setItem("nineText", nineText);
@@ -90,3 +93,5 @@ saveButton.click (function(event) {
     localStorage.setItem("fourText", fourText);
     renderText();
 });
+
+renderText();
