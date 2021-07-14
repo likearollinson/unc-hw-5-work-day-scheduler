@@ -41,28 +41,25 @@ var fourEl = $("#textFour");
 
 
 function renderText() {
-    var eightText1 = localStorage.getItem("eightText");
-    var nineText1 = localStorage.getItem("nineText");
-    var tenText1 = localStorage.getItem("tenText");
-    var elevenText1 = localStorage.getItem("elevenText");
-    var twelveText1 = localStorage.getItem("twelveText");
-    var oneText1 = localStorage.getItem("oneText");
-    var twoText1 = localStorage.getItem("twoText");
-    var threeText1 = localStorage.getItem("threeText");
-    var fourText1 = localStorage.getItem("fourText");
+    var eightText = localStorage.getItem("eightText");
+    var nineText = localStorage.getItem("nineText");
+    var tenText = localStorage.getItem("tenText");
+    var elevenText = localStorage.getItem("elevenText");
+    var twelveText = localStorage.getItem("twelveText");
+    var oneText = localStorage.getItem("oneText");
+    var twoText = localStorage.getItem("twoText");
+    var threeText = localStorage.getItem("threeText");
+    var fourText = localStorage.getItem("fourText");
 
-    if (!eightText1 || !nineText1 || !tenText1 || !elevenText1 || !twelveText1 || !oneText1 || !twoText1 || !threeText1 || !fourText1)
-        return;
-    
-    eightEl.text(eightText1);
-    nineEl.text(nineText1);
-    tenEl.text(tenText1);
-    elevenEl.text(elevenText1);
-    twelveEl.text(twelveText1);
-    oneEl.text(oneText1);
-    twoEl.text(twoText1);
-    threeEl.text(threeText1);
-    fourEl.text(fourText1);
+    eightEl.text(eightText);
+    nineEl.text(nineText);
+    tenEl.text(tenText);
+    elevenEl.text(elevenText);
+    twelveEl.text(twelveText);
+    oneEl.text(oneText);
+    twoEl.text(twoText);
+    threeEl.text(threeText);
+    fourEl.text(fourText);
 };
 
 saveButton = $(".saveBtn");
