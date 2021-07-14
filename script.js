@@ -55,7 +55,7 @@ function renderText() {
     $("#blockFour").text(fourText);
 };
 
-//click event that allows for the saving of text for textblocks
+click event that allows for the saving of text for textblocks
 $(".saveBtn").click (function(event) {
     event.preventDefault();
     //sets local storage to value in in text box
