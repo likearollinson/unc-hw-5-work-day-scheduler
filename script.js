@@ -8,7 +8,7 @@ var checkTime = function () {
     // var currentTime = 13
 
     //get all elements with class "text"
-    var timeBlockEl = $(".text");
+    var timeBlockEl = $(".timeblockText");
     for (var i = 0 ; i < timeBlockEl.length ; i++) {
         //iterate through each time block element
         var timeBlock = i + 8;
@@ -26,18 +26,18 @@ var checkTime = function () {
         }
     }
 }
-//checkTime every 5 minutes
+//check currentTime every 5 minutes
 setInterval(checkTime(), (1000 * 60) * 5);
 
-var eightEl = $("#timeEight");
-var nineEl = $("#timeNine");
-var tenEl = $("#timeTen");
-var elevenEl = $("#timeEleven");
-var twelveEl = $("#timeTwelve");
-var oneEl = $("#timeOne");
-var twoEl = $("#timeTwo");
-var threeEl = $("#timeThree");
-var fourEl = $("#timeFour");
+var eightEl = $("#textEight").val();
+var nineEl = $("#textNine");
+var tenEl = $("#textTen");
+var elevenEl = $("#textEleven");
+var twelveEl = $("#textTwelve");
+var oneEl = $("#textOne");
+var twoEl = $("#textTwo");
+var threeEl = $("#textThree");
+var fourEl = $("#textFour");
 
 function renderText() {
     var eightText = localStorage.getItem("eightText");
@@ -62,7 +62,7 @@ function renderText() {
     twoEl.text(twoText);
     threeEl.text(threeText);
     fourEl.text(fourText);
-}
+};
 
 var saveButton = $(".saveBtn")
 
